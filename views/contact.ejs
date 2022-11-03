@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include('partials/head'); %>
+  
+  <body>
+	  <%- include('partials/navbar'); %>
+	
+    <!-- Register-Form -->
+    <div class="container my-5">
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          <h2>Contacto</h2>
+    
+          <form method="POST" action="https://formspree.io/f/xbjbpqqq" enctype="multipart/form-data">
+            <div class="row">
+              <div class="col-md-6 my-1">
+                <div class="form-group">
+                  <label><b>Nombre:</b></label>
+                  <input 
+                    type="text" 
+                    name="fullName" 
+                    class="form-control <%= locals.errors && errors.fullName ? 'is-invalid' : null %>"
+                    value="<%= locals.oldData ? oldData.fullName : null %>"
+                  >
+
+                  <% if (locals.errors && errors.fullName) { %>
+                    <div class="text-danger">
+                      <%= errors.fullName.msg %> 
+                    </div>
+                  <% } %>
+                </div>
+              </div>
+                
+              <div class="col-md-6 my-1">
+                <div class="form-group">
+                  <label><b>Teléfono:</b></label>
+                  <input 
+                    type="tel" 
+                    name="telephone" 
+                    class="form-control <%= locals.errors && errors.telephone ? 'is-invalid' : null %>"
+                    value="<%= locals.oldData ? oldData.telephone : null %>"
+                  >
+                  <% if (locals.errors && errors.telephone) { %>
+                    <div class="text-danger">
+                      <%= errors.telephone.msg %>
+                    </div>
+                  <% } %>
+                </div>
+              </div>
+                
+              <div class="col-md-6 my-1">
+                <div class="form-group">
+                  <label><b>Ubicación:</b></label>
+                  <input 
+                    type="text" 
+                    name="ubication" 
+                    class="form-control <%= locals.errors && errors.ubication ? 'is-invalid' : null %>"
+                  >
+
+                  <% if (locals.errors && errors.ubication) { %>
+                    <div class="text-danger">
+                      <%= errors.ubication.msg %>
+                    </div>
+                  <% } %>
+                </div>
+              </div>
+                
+              <div class="col-md-6 my-1">
+                <div class="form-group">
+                  <label><b>Servicio:</b></label>
+                  <select 
+                    name="service" 
+                    class="form-select <%= locals.errors && errors.service ? 'is-invalid' : null %>"
+                  >
+                    <option value="">Elige un servicio</option>
+                    <%  
+                      let services = ['Servicio 1', 'Servicio 2', 'Servicio 3'];
+                    %>
+                    <% for (const oneService of services) { %>
+                      <option 
+                        value="<%= oneService %>"
+                        <%= locals.oldData && (oneService === oldData.service) ? 'selected' : null %> 
+                      > <%= oneService %> </option>
+                    <% } %>
+                  </select>
+
+                  <% if (locals.errors && errors.service) { %>
+                    <div class="text-danger">
+                      <%= errors.service.msg %>
+                    </div>
+                  <% } %>
+                </div>
+              </div>
+                
+              <div class="col-12 my-3">
+                <button type="submit" class="btn btn-primary">Enviar</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- //Register-Form -->
+
+	  <%- include('partials/footer'); %>
+  </body>
+</html>

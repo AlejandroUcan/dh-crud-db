@@ -1,10 +1,10 @@
 [
  {
   "id": 1,
-  "fullName": "Javi Herrera",
-  "email": "javi@dh.com",
-  "password": "$2a$10$kbHNepDXku1qKDytFK3RpuLtkW/dqMGDi4jXL7lNQUF8lm1HZ2.N.",
-  "country": "Colombia",
-  "avatar": "1609285636788_img.jpg"
+  "fullName": "Admin",
+  "email": "admin@mst.com",
+  "password": "$2a$10$rGzF.8Cr6Q9vytCtjz2JJes4XQt6NUFT3ydBEyryJDn9/lIhJ6hPi",
+  "country": "México",
+  "avatar": "1667426247789_img.gif"
  }
 ]

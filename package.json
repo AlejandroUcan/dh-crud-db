@@ -1,5 +1,5 @@
 {
-  "name": "register-login",
+  "name": "dh-crud-db",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -18,5 +18,8 @@
     "express-session": "^1.17.1",
     "express-validator": "^6.8.1",
     "multer": "^1.4.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
   }
 }
